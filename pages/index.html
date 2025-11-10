@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index</title>
+  </head>
+  <body>
+    <section class="addTicket-panel d-flex justify-content-center gap-6 rounded-3 shadow-sm">
+      <div class="w-50 d-flex flex-column justify-content-evenly">
+        <img class="mb-4" src="../assets/images/main_img.png" alt="main_img">
+        <img class="" src="../assets/images/logo.png" alt="logo">
+      </div>
+      <form class="w-50 addTicket addTicketForm" action="">
+        <h1 class="text-primary-400 border-bottom border-3 pb-1 border-primary-400 mb-9">
+          <span>
+            <i class="bi bi-plus-circle me-1"></i>
+          </span>
+          新增旅遊套票
+        </h1>
+        <div class="d-flex flex-column gap-4">
+          <div class="text-primary-400 d-flex align-items-center gap-3">
+            <label for="ticketName" class="">套票名稱</label>
+            <input type="text" id="ticketName" name="套票名稱" 
+            class="flex-fill border-0 border-bottom border-primary-400 bg-neutral-50 text-neutral-500 py-2 px-3" placeholder="請填寫圖片名稱"/>
+          </div>
+          <div class="alert-message">
+            <p id="ticketName-message" data-message="套票名稱">
+            </p>
+          </div>
+          <div class="text-primary-400 d-flex align-items-center gap-3">
+            <label for="ticketImgUrl" class="">圖片網址</label>
+            <input type="text" id="ticketImgUrl" name="圖片網址" 
+            class="flex-fill border-0 border-bottom border-primary-400 bg-neutral-50 text-neutral-500 py-2 px-3" placeholder="請填寫圖片網址"/>
+          </div>
+          <div class="alert-message">
+            <p id="ticketImgUrl-message" data-message="圖片網址">
+            </p>
+          </div>
+          <div class="text-primary-400 d-flex align-items-center gap-3">
+            <label class="" for="ticketRegion">景點地區</label>
+            <select id="ticketRegion" name="景點地區" 
+            class="flex-fill border-0 border-bottom border-primary-400 bg-neutral-50 text-neutral-500 py-2 px-3">
+              <option value="" selected hidden>請選擇景點地區</option>
+              <option value="台北">台北</option>
+              <option value="台中">台中</option>
+              <option value="高雄">高雄</option>
+            </select>
+          </div>
+          <div class="alert-message">
+            <p id="ticketRegion-message" data-message="景點地區">
+            </p>
+          </div>
+          <div class="text-primary-400 d-flex align-items-center gap-3">
+            <label class=""  for="ticketPrice">套票金額</label>
+            <input type="number" id="ticketPrice" placeholder="請填寫套票金額" name="套票金額" min="0" 
+            class="flex-fill border-0 border-bottom border-primary-400 bg-neutral-50 text-neutral-500 py-2 px-3">
+          </div>
+          <div class="alert-message">
+            <p id="ticketPrice-message" data-message="套票金額">
+            </p>
+          </div>
+          <div class="text-primary-400 d-flex align-items-center gap-3">
+            <label class=""  for="ticketNum">套票組數</label>
+            <input type="number" id="ticketNum" placeholder="請填寫套票組數" name="套票組數" min="0" 
+            class="flex-fill border-0 border-bottom border-primary-400 bg-neutral-50 text-neutral-500 py-2 px-3">
+          </div>
+          <div class="alert-message">
+            <p id="ticketNum-message" data-message="套票組數">
+            </p>
+          </div>
+          <div class="text-primary-400 d-flex align-items-center gap-3">
+            <label class=""  for="ticketRate">套票星級</label>
+            <input type="number" id="ticketRate" placeholder="請填寫套票星級" name="套票星級" min="0" max="10" 
+            class="flex-fill border-0 border-bottom border-primary-400 bg-neutral-50 text-neutral-500 py-2 px-3">
+          </div>
+          <div class="alert-message">
+            <p id="ticketRate-message" data-message="套票星級">
+            </p>
+          </div>
+          <div class="text-primary-400 d-flex  gap-3">
+            <label class="" for="ticketDescription">套票描述</label>
+            <textarea name="套票描述" maxlength="100" id="ticketDescription" placeholder="請填寫套票描述（限 100 字）"
+            class="flex-fill border-0 border-bottom border-primary-400 bg-neutral-50 text-neutral-500 py-2 px-3" style="height: 120px;"></textarea>
+          </div>
+          <div class="alert-message">
+            <p id="ticketDescription-message" data-message="套票描述">
+            </p>
+          </div>
+          <div class="d-flex justify-content-end mt-6">
+            <input type="button" id="addTicketBtn" class="addTicketPush btn border-0 py-2 px-5 text-neutral-0 rounded-1" value="新增套票">
+          </div>
+        </div>
+      </form>
+    </section>
+    <div class="bg-neutral-50">
+      <div class="container">
+        <div class="row">
+          <section class="col-12 main-content">
+            <div class=" text-primary-400 d-flex align-items-center gap-6 mb-6">
+              <select id="" name="地區搜尋" style="width: 33%;"
+              class="searchBox rounded-1 border-neutral-500 bg-white text-neutral-500 py-2 px-3">
+                <option value="地區搜尋" selected hidden>地區搜尋</option>
+                <option value="allCity">全部地區</option>
+                <option value="台北">台北</option>
+                <option value="台中">台中</option>
+                <option value="高雄">高雄</option>
+              </select>
+              <div class="text-neutral-500">
+                <p>本次搜尋共<span class="cardCityNum">6</span>筆資料</p>
+              </div>
+            </div>
+            <ul class="ticketList row p-0">
+              <!--綠島自由行套裝行程-->
+              <li class="ticketCard col-4 g-8" data-city="台東">
+                <div class="bg-neutral-0 shadow-sm h-100 h-100">
+                  <div class="ticketCard-img position-relative">
+                    <a href="#">
+                      <img src="../assets/images/travel_1.png" alt="travel_1">
+                    </a>
+                    <div class="text-center text-neutral-0 fs-5 bg-primary-300 ticketCard-region position-absolute">台東</div>
+                    <div class="text-center text-neutral-0 bg-primary-400 ticketCard-rank position-absolute">8.6</div>
+                  </div>
+                  <div class="ticketCard-content py-6 px-5">
+                    <div class="mb-6">
+                      <h3 class="fw-medium border-bottom border-2 pb-1 border-primary-400 mb-4">
+                        <a href="#" class="ticketCard-name">綠島自由行套裝行程</a>
+                      </h3>
+                      <p class="ticketCard-description text-neutral-600">
+                        嚴選超高CP值綠島自由行套裝行程，多種綠島套裝組合，提供台東綠島來回船票、綠島環島機車、綠島民宿住宿，行程加贈『綠島浮潛體驗』以及『綠島生態導覽』，讓你用輕鬆的綠島套裝自由行，也能深度認識綠島在地文化。
+                      </p>
+                    </div>
+                    <div class="ticketCard-info text-primary-400 d-flex justify-content-between ">
+                      <p class="ticketCard-num fw-medium d-flex align-items-center gap-1">
+                        <span><i class="bi bi-exclamation-circle-fill"></i></span>
+                        剩下最後 <span id="ticketCard-num"> 8 </span> 組
+                      </p>
+                      <p class="ticketCard-price fw-medium d-flex align-items-center gap-1">
+                        TWD $<span id="ticketCard-price" class="fw-medium fs-2 ">1280</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <!--清境高空觀景步道二日遊-->
+              <li class="ticketCard col-4 g-8" data-city="南投">
+                <div class="bg-neutral-0 shadow-sm h-100 h-100">
+                  <div class="ticketCard-img position-relative">
+                    <a href="#">
+                      <img src="../assets/images/travel_4.png" alt="travel_4">
+                    </a>
+                    <div class="text-center text-neutral-0 fs-5 bg-primary-300 ticketCard-region position-absolute">南投</div>
+                    <div class="text-center text-neutral-0 bg-primary-400 ticketCard-rank position-absolute">8.2</div>
+                  </div>
+                  <div class="ticketCard-content py-6 px-5">
+                    <div class="mb-6">
+                      <h3 class="fw-medium border-bottom border-2 pb-1 border-primary-400 mb-4">
+                        <a href="#" class="ticketCard-name">清境高空觀景步道二日遊</a>
+                      </h3>
+                      <p class="ticketCard-description text-neutral-600">
+                        清境農場青青草原數十公頃碧草，餵食著數以百計的綿羊和牛群，中央山脈最高的北三段群峰形成一堵如帶的高牆，攔住清晨的薄霧山嵐，成就了從花蓮翻山而來的雲瀑在濁水溪谷積成雲海，這些景觀豐沛了清境觀景步道的風格，也涵養它無可取代的特色。
+                      </p>
+                    </div>
+                    <div class="ticketCard-info text-primary-400 d-flex justify-content-between ">
+                      <p class="ticketCard-num fw-medium d-flex align-items-center gap-1">
+                        <span><i class="bi bi-exclamation-circle-fill"></i></span>
+                        剩下最後 <span id="ticketCard-num"> 12 </span> 組
+                      </p>
+                      <p class="ticketCard-price fw-medium d-flex align-items-center gap-1">
+                        TWD $<span id="ticketCard-price" class="fw-medium fs-2 ">2580</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <!--南庄度假村露營車二日遊-->
+              <li class="ticketCard col-4 g-8" data-city="台中">
+                <div class="bg-neutral-0 shadow-sm h-100 h-100">
+                  <div class="ticketCard-img position-relative">
+                    <a href="#">
+                      <img src="../assets/images/travel_6.png" alt="travel_6">
+                    </a>
+                    <div class="text-center text-neutral-0 fs-5 bg-primary-300 ticketCard-region position-absolute">台中</div>
+                    <div class="text-center text-neutral-0 bg-primary-400 ticketCard-rank position-absolute">9.6</div>
+                  </div>
+                  <div class="ticketCard-content py-6 px-5">
+                    <div class="mb-6">
+                      <h3 class="fw-medium border-bottom border-2 pb-1 border-primary-400 mb-4">
+                        <a href="#" class="ticketCard-name">南庄度假村露營車二日遊</a>
+                      </h3>
+                      <p class="ticketCard-description text-neutral-600">
+                        南庄雲水豪華露營車，擁有最愜意的露營體驗吧！一泊一食，輕鬆享受露營車樂趣。獨立衛浴與私人戶外露臺。入住豪華露營車還能使用戶外SPA大眾湯，感受美人湯魅力。
+                      </p>
+                    </div>
+                    <div class="ticketCard-info text-primary-400 d-flex justify-content-between ">
+                      <p class="ticketCard-num fw-medium d-flex align-items-center gap-1">
+                        <span><i class="bi bi-exclamation-circle-fill"></i></span>
+                        剩下最後 <span id="ticketCard-num"> 2 </span> 組
+                      </p>
+                      <p class="ticketCard-price fw-medium d-flex align-items-center gap-1">
+                        TWD $<span id="ticketCard-price" class="fw-medium fs-2 ">1280</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <!--山林悠遊雙人套票-->
+              <li class="ticketCard col-4 g-8" data-city="台中">
+                <div class="bg-neutral-0 shadow-sm h-100">
+                  <div class="ticketCard-img position-relative">
+                    <a href="#">
+                      <img src="../assets/images/travel_3.png" alt="travel_3">
+                    </a>
+                    <div class="text-center text-neutral-0 fs-5 bg-primary-300 ticketCard-region position-absolute">台中</div>
+                    <div class="text-center text-neutral-0 bg-primary-400 ticketCard-rank position-absolute">8.6</div>
+                  </div>
+                  <div class="ticketCard-content py-6 px-5">
+                    <div class="mb-6">
+                      <h3 class="fw-medium border-bottom border-2 pb-1 border-primary-400 mb-4">
+                        <a href="#" class="ticketCard-name">山林悠遊雙人套票</a>
+                      </h3>
+                      <p class="ticketCard-description text-neutral-600">
+                        山林悠遊套票，結合南投清境高空步道、雙龍瀑布七彩吊橋、瑞龍瀑布園區之熱門景點，帶您飽覽南投瑰麗的自然環境，體驗變化無窮的地形景觀，喜歡挑戰高空的您一定不可錯過。含雙龍瀑布入場券 x2）
+                      </p>
+                    </div>
+                    <div class="ticketCard-info text-primary-400 d-flex justify-content-between ">
+                      <p class="ticketCard-num fw-medium d-flex align-items-center gap-1">
+                        <span><i class="bi bi-exclamation-circle-fill"></i></span>
+                        剩下最後 <span id="ticketCard-num"> 10 </span> 組
+                      </p>
+                      <p class="ticketCard-price fw-medium d-flex align-items-center gap-1">
+                        TWD $<span id="ticketCard-price" class="fw-medium fs-2 ">880</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <!--漁樂碼頭釣魚體驗套票-->
+              <li class="ticketCard col-4 g-8" data-city="台中">
+                <div class="bg-neutral-0 shadow-sm h-100">
+                  <div class="ticketCard-img position-relative">
+                    <a href="#">
+                      <img src="../assets/images/travel_2.png" alt="travel_2">
+                    </a>
+                    <div class="text-center text-neutral-0 fs-5 bg-primary-300 ticketCard-region position-absolute">台中</div>
+                    <div class="text-center text-neutral-0 bg-primary-400 ticketCard-rank position-absolute">8.6</div>
+                  </div>
+                  <div class="ticketCard-content py-6 px-5">
+                    <div class="mb-6">
+                      <h3 class="fw-medium border-bottom border-2 pb-1 border-primary-400 mb-4">
+                        <a href="#" class="ticketCard-name">漁樂碼頭釣魚體驗套票</a>
+                      </h3>
+                      <p class="ticketCard-description text-neutral-600">
+                        台中全新親子景點寶熊漁樂碼頭，為知名釣具公司「OKUMA」所創立的觀光工廠。一樓藍白希臘漁村風商店街免費參觀。二樓釣魚故事館則設立全台唯一虛擬釣場，透過導覽讓你知道如何釣魚、魚餌怎麼區分，寓教於樂的台中景點！
+                      </p>
+                    </div>
+                    <div class="ticketCard-info text-primary-400 d-flex justify-content-between ">
+                      <p class="ticketCard-num fw-medium d-flex align-items-center gap-1">
+                        <span><i class="bi bi-exclamation-circle-fill"></i></span>
+                        剩下最後 <span id="ticketCard-num"> 5 </span> 組
+                      </p>
+                      <p class="ticketCard-price fw-medium d-flex align-items-center gap-1">
+                        TWD $<span id="ticketCard-price" class="fw-medium fs-2 ">1280</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <!--熊森公園親子二日遊套票-->
+              <li class="ticketCard col-4 g-8" data-city="高雄">
+                <div class="bg-neutral-0 shadow-sm h-100">
+                  <div class="ticketCard-img position-relative">
+                    <a href="#">
+                      <img src="../assets/images/travel_5.png" alt="travel_5">
+                    </a>
+                    <div class="text-center text-neutral-0 fs-5 bg-primary-300 ticketCard-region position-absolute">高雄</div>
+                    <div class="text-center text-neutral-0 bg-primary-400 ticketCard-rank position-absolute">8.6</div>
+                  </div>
+                  <div class="ticketCard-content py-6 px-5">
+                    <div class="mb-6">
+                      <h3 class="fw-medium border-bottom border-2 pb-1 border-primary-400 mb-4">
+                        <a href="#" class="ticketCard-name">熊森公園親子二日遊套票</a>
+                      </h3>
+                      <p class="ticketCard-description text-neutral-600">
+                        來自日本最受歡迎的兒童遊樂園《 BearSon Park 熊森公園》於全世界有800多家據點，在全世界、日本及台灣，很多小孩的童年都在遊戲愛樂園裡一同成長，提供兒童一個最富教育性及娛樂性的休憩遊樂天地！
+                      </p>
+                    </div>
+                    <div class="ticketCard-info text-primary-400 d-flex justify-content-between ">
+                      <p class="ticketCard-num fw-medium d-flex align-items-center gap-1">
+                        <span><i class="bi bi-exclamation-circle-fill"></i></span>
+                        剩下最後 <span id="ticketCard-num"> 3 </span> 組
+                      </p>
+                      <p class="ticketCard-price fw-medium d-flex align-items-center gap-1">
+                        TWD $<span id="ticketCard-price" class="fw-medium fs-2 ">2480</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"></script>
+    <script type="module" src="../main.js"></script>
+
+  </body>
+</html>
